@@ -3,7 +3,7 @@
   "target": "Run1 (ms)",
   "target_unit": "milisegundos",
   "best_scenario": "PCA",
-  "best_model": "ExtraTrees",
+  "best_model": "MLPRegressor",
   "input_columns": [
     "MWG",
     "NWG",
@@ -46,7 +46,7 @@
     "cat__SB_1.0",
     "cat__SA_1.0"
   ],
-  "dataset_url": "https://raw.githubusercontent.com/zxRogelio/proyecto-regresion-sgemm/main/sgemm_product.csv",
+  "dataset_url": "https://raw.githubusercontent.com/zxRogelio/proyecto-regresion-sgemm/master/sgemm_product.csv",
   "demo_rows": [
     {
       "fila_dataset": 174861,
@@ -75,8 +75,8 @@
     {
       "fila_dataset": 78415,
       "Run1_real_ms": 50.12,
-      "Run1_predicho_ms": 50.11958872133387,
-      "error_absoluto_ms": 0.00041127866612811204
+      "Run1_predicho_ms": 50.11958872133386,
+      "error_absoluto_ms": 0.00041127866613521746
     },
     {
       "fila_dataset": 144862,
