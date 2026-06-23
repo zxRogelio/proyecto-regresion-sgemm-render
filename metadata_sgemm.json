@@ -49,52 +49,52 @@
   "dataset_url": "https://raw.githubusercontent.com/zxRogelio/proyecto-regresion-sgemm/main/sgemm_product.csv",
   "demo_rows": [
     {
-      "fila_dataset": 204801,
-      "Run1_real_ms": 525.6,
-      "Run1_predicho_ms": 525.6000651404023,
-      "error_absoluto_ms": 6.514040228466911e-05
+      "fila_dataset": 174861,
+      "Run1_real_ms": 201.77,
+      "Run1_predicho_ms": 201.7697489845992,
+      "error_absoluto_ms": 0.00025101540080640916
     },
     {
-      "fila_dataset": 136131,
-      "Run1_real_ms": 50.57,
-      "Run1_predicho_ms": 50.56985886451242,
-      "error_absoluto_ms": 0.0001411354875813231
+      "fila_dataset": 194032,
+      "Run1_real_ms": 78.37,
+      "Run1_predicho_ms": 78.36972851538073,
+      "error_absoluto_ms": 0.00027148461927595235
     },
     {
-      "fila_dataset": 161948,
-      "Run1_real_ms": 66.84,
-      "Run1_predicho_ms": 66.83982688661844,
-      "error_absoluto_ms": 0.0001731133815638941
+      "fila_dataset": 6160,
+      "Run1_real_ms": 47.51,
+      "Run1_predicho_ms": 47.5102860309891,
+      "error_absoluto_ms": 0.0002860309891019597
     },
     {
-      "fila_dataset": 123008,
-      "Run1_real_ms": 47.01,
-      "Run1_predicho_ms": 47.01021788386781,
-      "error_absoluto_ms": 0.00021788386781196323
+      "fila_dataset": 60092,
+      "Run1_real_ms": 42.63,
+      "Run1_predicho_ms": 42.630357348358636,
+      "error_absoluto_ms": 0.0003573483586336579
     },
     {
-      "fila_dataset": 101397,
-      "Run1_real_ms": 72.74,
-      "Run1_predicho_ms": 72.73971131750282,
-      "error_absoluto_ms": 0.00028868249717106664
+      "fila_dataset": 78415,
+      "Run1_real_ms": 50.12,
+      "Run1_predicho_ms": 50.11958872133387,
+      "error_absoluto_ms": 0.00041127866612811204
     },
     {
-      "fila_dataset": 108271,
-      "Run1_real_ms": 39.69,
-      "Run1_predicho_ms": 39.68966058923904,
-      "error_absoluto_ms": 0.00033941076095800327
+      "fila_dataset": 144862,
+      "Run1_real_ms": 46.07,
+      "Run1_predicho_ms": 46.06947248990343,
+      "error_absoluto_ms": 0.0005275100965675961
     },
     {
-      "fila_dataset": 23912,
-      "Run1_real_ms": 70.71,
-      "Run1_predicho_ms": 70.71041083777938,
-      "error_absoluto_ms": 0.00041083777938411004
+      "fila_dataset": 38069,
+      "Run1_real_ms": 52.71,
+      "Run1_predicho_ms": 52.7094571691783,
+      "error_absoluto_ms": 0.0005428308217005906
     },
     {
-      "fila_dataset": 5796,
-      "Run1_real_ms": 69.05,
-      "Run1_predicho_ms": 69.05046626636054,
-      "error_absoluto_ms": 0.0004662663605472517
+      "fila_dataset": 41787,
+      "Run1_real_ms": 46.27,
+      "Run1_predicho_ms": 46.26936852086234,
+      "error_absoluto_ms": 0.0006314791376595963
     }
   ],
   "fields": {
