@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción SGEMM GPU</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <section class="card hero">
+            <h1>{{ metadata.model_name }}</h1>
+            <p>
+                Esta aplicación predice la columna Run1 (ms), es decir, el tiempo de ejecución de la primera medición del kernel SGEMM en GPU.
+                Ingresa los valores originales de configuración del kernel y el modelo devolverá una estimación en milisegundos.
+            </p>
+            <div class="meta">
+                <span>Modelo: {{ metadata.best_model }}</span>
+                <span>Escenario: {{ metadata.best_scenario }}</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Formulario de predicción</h2>
+            <form method="POST" class="form-grid">
+                {% for col in metadata.input_columns %}
+                    {% set field = metadata.fields[col] %}
+                    <label class="field">
+                        <span>{{ col }}</span>
+                        <small>{{ field.description }}</small>
+
+                        {% if field.kind == 'categorical' %}
+                            <select name="{{ col }}" required>
+                                <option value="">Selecciona...</option>
+                                {% for opt in field.options %}
+                                    <option value="{{ opt }}" {% if values.get(col) == opt|string %}selected{% endif %}>{{ opt }}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <input
+                                type="number"
+                                step="any"
+                                name="{{ col }}"
+                                min="{{ field.min }}"
+                                max="{{ field.max }}"
+                                placeholder="Ejemplo: {{ '%.2f'|format(field.median) }}"
+                                value="{{ values.get(col, '') }}"
+                                required
+                            >
+                        {% endif %}
+                    </label>
+                {% endfor %}
+
+                <button type="submit" class="btn">Predecir tiempo</button>
+            </form>
+        </section>
+
+        {% if prediction is not none %}
+            <section class="result success">
+                <h2>Resultado</h2>
+                <p>Tiempo estimado de Run1:</p>
+                <strong>{{ '%.4f'|format(prediction) }} {{ metadata.target_unit }}</strong>
+            </section>
+        {% endif %}
+
+        {% if error %}
+            <section class="result error">
+                <h2>Error en la entrada</h2>
+                <p>{{ error }}</p>
+            </section>
+        {% endif %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,204 @@
+{
+  "model_name": "Predicción de Run1 (ms) en kernel SGEMM GPU",
+  "target": "Run1 (ms)",
+  "target_unit": "milisegundos",
+  "best_scenario": "PCA",
+  "best_model": "ExtraTrees",
+  "input_columns": [
+    "MWG",
+    "NWG",
+    "KWG",
+    "MDIMC",
+    "NDIMC",
+    "MDIMA",
+    "NDIMB",
+    "KWI",
+    "VWM",
+    "VWN",
+    "STRM",
+    "STRN",
+    "SA",
+    "SB"
+  ],
+  "categorical_features": [
+    "STRM",
+    "STRN",
+    "SA",
+    "SB"
+  ],
+  "numeric_features": [
+    "MWG",
+    "NWG",
+    "KWG",
+    "MDIMC",
+    "NDIMC",
+    "MDIMA",
+    "NDIMB",
+    "KWI",
+    "VWM",
+    "VWN"
+  ],
+  "selected_transformed_features": [
+    "num__MDIMC",
+    "num__MWG",
+    "num__NWG",
+    "num__NDIMC",
+    "cat__SB_1.0",
+    "cat__SA_1.0"
+  ],
+  "dataset_url": "https://raw.githubusercontent.com/zxRogelio/proyecto-regresion-sgemm/main/sgemm_product.csv",
+  "demo_rows": [
+    {
+      "fila_dataset": 204801,
+      "Run1_real_ms": 525.6,
+      "Run1_predicho_ms": 525.6000651404023,
+      "error_absoluto_ms": 6.514040228466911e-05
+    },
+    {
+      "fila_dataset": 136131,
+      "Run1_real_ms": 50.57,
+      "Run1_predicho_ms": 50.56985886451242,
+      "error_absoluto_ms": 0.0001411354875813231
+    },
+    {
+      "fila_dataset": 161948,
+      "Run1_real_ms": 66.84,
+      "Run1_predicho_ms": 66.83982688661844,
+      "error_absoluto_ms": 0.0001731133815638941
+    },
+    {
+      "fila_dataset": 123008,
+      "Run1_real_ms": 47.01,
+      "Run1_predicho_ms": 47.01021788386781,
+      "error_absoluto_ms": 0.00021788386781196323
+    },
+    {
+      "fila_dataset": 101397,
+      "Run1_real_ms": 72.74,
+      "Run1_predicho_ms": 72.73971131750282,
+      "error_absoluto_ms": 0.00028868249717106664
+    },
+    {
+      "fila_dataset": 108271,
+      "Run1_real_ms": 39.69,
+      "Run1_predicho_ms": 39.68966058923904,
+      "error_absoluto_ms": 0.00033941076095800327
+    },
+    {
+      "fila_dataset": 23912,
+      "Run1_real_ms": 70.71,
+      "Run1_predicho_ms": 70.71041083777938,
+      "error_absoluto_ms": 0.00041083777938411004
+    },
+    {
+      "fila_dataset": 5796,
+      "Run1_real_ms": 69.05,
+      "Run1_predicho_ms": 69.05046626636054,
+      "error_absoluto_ms": 0.0004662663605472517
+    }
+  ],
+  "fields": {
+    "MWG": {
+      "kind": "numeric",
+      "description": "Tamaño de bloque o tiling en la dimensión M del kernel.",
+      "min": 16.0,
+      "max": 128.0,
+      "median": 64.0
+    },
+    "NWG": {
+      "kind": "numeric",
+      "description": "Tamaño de bloque o tiling en la dimensión N del kernel.",
+      "min": 16.0,
+      "max": 128.0,
+      "median": 64.0
+    },
+    "KWG": {
+      "kind": "numeric",
+      "description": "Tamaño de bloque o tiling en la dimensión K del kernel.",
+      "min": 16.0,
+      "max": 32.0,
+      "median": 32.0
+    },
+    "MDIMC": {
+      "kind": "numeric",
+      "description": "Dimensión de trabajo relacionada con la matriz C en M.",
+      "min": 8.0,
+      "max": 32.0,
+      "median": 8.0
+    },
+    "NDIMC": {
+      "kind": "numeric",
+      "description": "Dimensión de trabajo relacionada con la matriz C en N.",
+      "min": 8.0,
+      "max": 32.0,
+      "median": 8.0
+    },
+    "MDIMA": {
+      "kind": "numeric",
+      "description": "Dimensión de trabajo relacionada con la matriz A en M.",
+      "min": 8.0,
+      "max": 32.0,
+      "median": 16.0
+    },
+    "NDIMB": {
+      "kind": "numeric",
+      "description": "Dimensión de trabajo relacionada con la matriz B en N.",
+      "min": 8.0,
+      "max": 32.0,
+      "median": 16.0
+    },
+    "KWI": {
+      "kind": "numeric",
+      "description": "Parámetro de iteración o factor de trabajo sobre la dimensión K.",
+      "min": 2.0,
+      "max": 8.0,
+      "median": 5.0
+    },
+    "VWM": {
+      "kind": "numeric",
+      "description": "Ancho vectorial utilizado en la dimensión M.",
+      "min": 1.0,
+      "max": 8.0,
+      "median": 2.0
+    },
+    "VWN": {
+      "kind": "numeric",
+      "description": "Ancho vectorial utilizado en la dimensión N.",
+      "min": 1.0,
+      "max": 8.0,
+      "median": 2.0
+    },
+    "STRM": {
+      "kind": "categorical",
+      "description": "Bandera binaria asociada a una estrategia de acceso o almacenamiento en M.",
+      "options": [
+        0,
+        1
+      ]
+    },
+    "STRN": {
+      "kind": "categorical",
+      "description": "Bandera binaria asociada a una estrategia de acceso o almacenamiento en N.",
+      "options": [
+        0,
+        1
+      ]
+    },
+    "SA": {
+      "kind": "categorical",
+      "description": "Bandera binaria de configuración/optimización relacionada con la matriz A.",
+      "options": [
+        0,
+        1
+      ]
+    },
+    "SB": {
+      "kind": "categorical",
+      "description": "Bandera binaria de configuración/optimización relacionada con la matriz B.",
+      "options": [
+        0,
+        1
+      ]
+    }
+  }
+}
