@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request
 import json
 import pandas as pd
@@ -10,6 +9,16 @@ app = Flask(__name__)
 pipeline = joblib.load("modelo_sgemm_pipeline.joblib")
 with open("metadata_sgemm.json", "r", encoding="utf-8") as f:
     metadata = json.load(f)
+
+
+@app.route("/health", methods=["GET"])
+def health():
+    return {
+        "status": "ok",
+        "message": "Servicio activo",
+        "model": metadata.get("model_name", "DecisionTreeRegressor")
+    }, 200
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -57,6 +66,7 @@ def index():
         error=error,
         values=values
     )
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
